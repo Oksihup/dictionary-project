@@ -5,12 +5,13 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <header className="App-header"></header>
-        <main>
-          <Dictionary />
-        </main>
+        <header className="App-header">
+          <a></a>
+        </header>
+        <Dictionary defaultKeyword="peace" />
         <footer className="App-footer">
-          <small>Coded by SheCodes</small>
+          This project was coded by <a>SheCodes</a> and is{" "}
+          <a>open-sourced on Github</a> <a>hosted on Netlify</a>
         </footer>
       </div>
     </div>

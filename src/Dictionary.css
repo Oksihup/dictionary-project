@@ -1,5 +1,6 @@
 .Dictionary {
-  background-color: wheat;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .App-footer {
