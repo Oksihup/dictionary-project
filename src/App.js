@@ -9,9 +9,31 @@ function App() {
           <a></a>
         </header>
         <Dictionary defaultKeyword="peace" />
-        <footer className="App-footer">
-          This project was coded by <a>SheCodes</a> and is{" "}
-          <a>open-sourced on Github</a> <a>hosted on Netlify</a>
+        <footer>
+          This project was coded by{" "}
+          <a
+            href="https://www.shecodes.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SheCodes
+          </a>{" "}
+          and is{" "}
+          <a
+            href="https://github.com/shecodesio/dictionary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            open-sourced on GitHub
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://shecodes-dictionary.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            hosted on Netlify
+          </a>
         </footer>
       </div>
     </div>
