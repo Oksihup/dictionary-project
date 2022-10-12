@@ -1,15 +1,26 @@
+.container {
+  width: 600px;
+  min-height: 400px;
+  padding: 20px;
+  margin: 30px auto;
+  color: black;
+  border-radius: 4px;
+  min-width: 300px;
+}
+
 .App {
-  padding: 60px 0 100px;
   max-width: 960px;
   margin: 0 auto;
 }
 
-.App footer {
-  text-align: center;
-  margin: 20px;
-  font-size: 13px;
+.footer {
+  margin: 0 auto;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.App a {
-  color: blue;
+.footer p {
+  text-align: center;
 }

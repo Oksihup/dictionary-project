@@ -5,32 +5,27 @@ import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
-  const [keyword, setKeyword] = useState(props.defaultKeyword);
-  const [loaded, setLoaded] = useState(false);
-  const [definition, setDefinition] = useState(null);
-  const [photos, setPhotos] = useState([]);
+  let [word, setWord] = useState(props.defaultKeyword);
+  let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState(null);
 
-  function handleImages(response) {
+  function DictionaryResponse(response) {
+    setResults(response.data[0]);
+  }
+
+  function handlePexelsResponse(response) {
     setPhotos(response.data.photos);
   }
 
-  function handleResponse(response) {
-    setDefinition(response.data[0]);
-    let apiUrl = `https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
-    let apiKey = "563492ad6f9170000100000184fbbe3ea1614705a3037d0819085490";
-    axios
-      .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
-      .then(handleImages);
-  }
-
-  function load() {
-    setLoaded(true);
-    search();
-  }
-
-  function search() {
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+  function search(event) {
+    let urlApi = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`;
+    axios.get(urlApi).then(DictionaryResponse);
+    let pexelsApiKey =
+      "563492ad6f9170000100000184fbbe3ea1614705a3037d0819085490";
+    let headers = { Authorization: `${pexelsApiKey}` };
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function handleSubmit(event) {
@@ -38,33 +33,37 @@ export default function Dictionary(props) {
     search();
   }
 
-  function handleKeywordChange(event) {
-    setKeyword(event.target.value);
+  function newWord(event) {
+    setWord(event.target.value);
+  }
+
+  function load() {
+    setLoaded(true);
+    search();
   }
 
   if (loaded) {
     return (
       <div className="Dictionary">
         <section>
+          <h1>What word do you want to look up?</h1>
           <form onSubmit={handleSubmit}>
-            <label>What word do you want to look up</label>
             <input
               type="search"
-              placeholder="Search for a word"
+              autoComplete="off"
+              autoFocus="on"
+              onChange={newWord}
               defaultValue={props.defaultKeyword}
-              autoFocus={true}
-              className="form-control search-input"
-              onChange={handleKeywordChange}
             />
           </form>
-          <small>i.e.paris, wine, yoga, coding</small>
+          <div className="hint">for example: peace, life, freedom...</div>
         </section>
-        <Results definition={definition} />
+        <Results results={results} />
         <Photos photos={photos} />
       </div>
     );
   } else {
     load();
-    return "Loading!";
+    return "Loading";
   }
 }

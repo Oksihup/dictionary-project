@@ -11,7 +11,7 @@ function App() {
           </a>
         </header>
         <Dictionary defaultKeyword="peace" />
-        <footer>
+        <footer className="footer">
           This project was coded by{" "}
           <a
             href="https://www.shecodes.io/"
