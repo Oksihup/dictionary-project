@@ -10,17 +10,9 @@ function App() {
         </header>
         <Dictionary defaultKeyword="peace" />
         <footer className="footer">
-          This project was coded by{" "}
+          This project was coded by Oksana Zhuravska and is{" "}
           <a
-            href="https://www.shecodes.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            SheCodes
-          </a>{" "}
-          and is{" "}
-          <a
-            href="https://github.com/shecodesio/dictionary"
+            href="https://github.com/Oksihup/dictionary-project"
             target="_blank"
             rel="noopener noreferrer"
           >

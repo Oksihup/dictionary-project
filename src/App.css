@@ -3,21 +3,25 @@
   min-height: 400px;
   padding: 20px;
   margin: 30px auto;
-  color: #008da5;
+  color: black;
   border-radius: 4px;
   min-width: 300px;
 }
+
 .App-header {
   text-align: center;
-  color: white;
+  color: aliceblue;
   font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 20px;
 }
 
 .App {
   max-width: 960px;
   margin: 0 auto;
-  background-color: #aff4ef;
-  background-image: url(pexels-photo.jpg);
+  background-color: #75d9fa;
+  border-radius: 10px;
 }
 
 .footer {
