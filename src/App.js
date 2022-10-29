@@ -20,7 +20,7 @@ function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://shecodes-dictionary.netlify.app/"
+            href="https://glistening-rolypoly-614f42.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
